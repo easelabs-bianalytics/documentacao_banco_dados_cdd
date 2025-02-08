@@ -103,17 +103,39 @@ task run
 
 
 ## 4. Processo de Carregamento de Dados
-- **Carregamento Inicial de Dados**:
-  - Descreva os passos para extrair os dados iniciais (primeiro carregamento) da fonte de dados.
-  - Forneça comandos ou scripts de exemplo usados para o carregamento inicial.
-  - Explique as transformações ou limpezas de dados rmkdocealizadas durante esse processo.
-  - Inclua erros comuns e soluções para o carregamento inicial.
-  
-- **Atualizações Incrementais Diárias**:
-  - Descreva o processo para as atualizações diárias, incluindo como os novos dados são extraídos, transformados e carregados no banco de dados.
-  - Explique como o sistema detecta novos ou dados alterados (por exemplo, usando carimbos de data/hora, chaves incrementais).
-  - Inclua a programação para as atualizações e como modificá-la.
-  - Destaque como tratar erros ou problemas nas atualizações incrementais (por exemplo, tentativas, logs).
+
+### **Carregamento Inicial de Dados**
+- [Consulte esta documentação](carregamento_dados.md) para detalhes sobre o carregamento inicial de dados.
+
+### **Atualizações Incrementais Diárias**
+- **Extração de Dados:**  
+  Os dados são extraídos da tabela Fato e dimensões das schema CDDD e TD. Também extraímos dados do Sharepoint para vendas extras, acesso e PBM 
+
+- **Transformação dos Dados:**  
+  Após a extração (CDDD), os dados são carregados em um dataframe pandas para realizar as seguintes transformações:
+  - Renomeação de colunas
+  - Formatação dos tipos de dados
+  - Criação de novas colunas:
+    - **Coluna `hash`:** Criação de uma constraint para evitar a inserção de dados duplicados.
+    - **Coluna `created_at`:** Registro de um timestamp com a data e hora em que o dado foi inserido no banco de dados.
+
+### **Tratamento de Duplicidade**
+  - Quando dados são inseridos na plataforma, é realizada uma verificação para garantir que não haja registros duplicados. A verificação é feita com base no **hash**, um campo único que identifica cada registro de maneira exclusiva.
+
+  - Se um registro com o mesmo hash já existir:
+    - Em vez de criar uma nova entrada, o sistema **atualiza** o registro existente com os novos valores, garantindo que o banco de dados sempre mantenha a versão mais atualizada dos dados.
+
+  **Resumo:**  
+  Se o hash do dado já existir na tabela, o aplicativo **não cria uma nova entrada**; ele **atualiza** os valores dos campos correspondentes, evitando duplicações e mantendo o banco de dados organizado e sempre atualizado.
+
+- **Observação:**  
+  Embora a lógica de duplicidade tenha sido implementada para evitar registros repetidos, ainda é possível que algumas duplicatas ocorram devido a fatores imprevistos. Até o momento, as duplicatas têm sido a principal causa de manutenção no banco de dados, especialmente devido à falta de padrão nos registros da Closeup (fonte original).
+
+### **Atualização de Arquivos do SharePoint**
+- Os arquivos baixados do SharePoint são atualizados diariamente. Porém, como o volume de dados é baixo, não é aplicada nenhuma lógica de duplicidade nesses arquivos. Em vez disso, as tabelas são simplesmente substituídas pelas versões mais recentes.
+
+### **Mais Detalhes**
+- Para informações adicionais sobre os aspectos técnicos das atualizações diárias, consulte a seção **Pipeline** nesta documentação, começando [por aqui](update_fato_cdd.md).
 
 ## 5. Execução do Código
 - **Fluxo de Execução**: Uma explicação detalhada de como rodar os scripts ou ferramentas que realizam a extração, transformação e carregamento dos dados.

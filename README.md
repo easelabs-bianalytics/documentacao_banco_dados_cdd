@@ -75,4 +75,3 @@ mkdocs gh-deploy --clean
 ssh -T git@github.com
 ```
 Se não estiver autenticado, adicione sua chave SSH ao GitHub.
-```

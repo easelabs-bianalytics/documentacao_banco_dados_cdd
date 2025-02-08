@@ -65,6 +65,6 @@ Aguarde alguns minutos para que o GitHub Pages processe as alterações.
 - Confirme que a opção GitHub Pages está habilitada no repositório (Settings > Pages).
 - Force uma atualização com:
 
-  ```bash
+```bash
 mkdocs gh-deploy --clean
 ```

@@ -26,15 +26,6 @@ plugins:
   - mkdocstrings:
       default_handler: python
 
-# extra_css:
-#   - 'stylesheets/custom.css'
-
-# markdown_extensions:
-#   - toc:
-#       permalink: true  # Adiciona ícones de permalink ao lado de cada item
-
-
-
 
 
 repo_url: https://github.com/easelabs-bianalytics/atualizacao_banco_dados_cdd.git

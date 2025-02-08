@@ -1,0 +1,1234 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../dados/">
+      
+      
+        <link rel="next" href="../sharepoint_downloader/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3">
+    
+    
+      
+        <title>Funções CDD - Banco de Dados CDD-TD</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.d7758b05.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#funcoes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Banco de Dados CDD-TD" class="md-header__button md-logo" aria-label="Banco de Dados CDD-TD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Banco de Dados CDD-TD
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Funções CDD
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/easelabs-bianalytics/atualizacao_banco_dados_cdd.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    atualizacao_banco_dados_cdd
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Banco de Dados CDD-TD" class="md-nav__button md-logo" aria-label="Banco de Dados CDD-TD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Banco de Dados CDD-TD
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/easelabs-bianalytics/atualizacao_banco_dados_cdd.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    atualizacao_banco_dados_cdd
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Guia do Usuário
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Guia do Usuário
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introdução ao projeto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuracao_github/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuração GitHub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Projeto Banco de Dados CDD
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Projeto Banco de Dados CDD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Módulos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Módulos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Funções CDD
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Funções CDD
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-do-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura do Script
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estrutura do Script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-bibliotecas-importadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Bibliotecas Importadas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-funcoes-definidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Funções Definidas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Funções Definidas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurar_engineschema" class="md-nav__link">
+    <span class="md-ellipsis">
+      configurar_engine(schema)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carregar_dadosquery-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      carregar_dados(query, engine)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gerar_hashrow-colunasnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      gerar_hash(row, colunas=None)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inserir_dados_com_tratamentodf-nome_tabela-engine_destino" class="md-nav__link">
+    <span class="md-ellipsis">
+      inserir_dados_com_tratamento(df, nome_tabela, engine_destino)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drop_viewsengine_destino" class="md-nav__link">
+    <span class="md-ellipsis">
+      drop_views(engine_destino)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recreate_viewsengine_destino" class="md-nav__link">
+    <span class="md-ellipsis">
+      recreate_views(engine_destino)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execucao_no_periodo_permitido" class="md-nav__link">
+    <span class="md-ellipsis">
+      execucao_no_periodo_permitido()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcoes-de-manipulacao-de-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funções de Manipulação de Data:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pasta_localsubpasta" class="md-nav__link">
+    <span class="md-ellipsis">
+      pasta_local(subpasta)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-funcoes-de-processamento-de-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Funções de Processamento de Arquivos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Funções de Processamento de Arquivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#processar_arquivocaminho_destino-aba" class="md-nav__link">
+    <span class="md-ellipsis">
+      processar_arquivo(caminho_destino, aba)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#determinar_modalentidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      determinar_modal(entidade)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#determinar_produtonome" class="md-nav__link">
+    <span class="md-ellipsis">
+      determinar_produto(nome)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-variaveis-de-configuracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Variáveis de Configuração
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-carregamento-de-variaveis-de-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Carregamento de Variáveis de Ambiente
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sharepoint_downloader/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sharepoint Downloader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pipeline
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Pipeline
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_fato_cdd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Atualização Fato CDD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_fato_td/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Atualização Fato TD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_dim_cddd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Atualização Dim CDDD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_extras_acesso_scd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Atualização Extras, Acesso e SCDs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_pbm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Atualização PBM (Vouchers)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update_ticket_medio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Atualização Ticket Médio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../auditoria/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auditoria
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-do-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura do Script
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estrutura do Script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-bibliotecas-importadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Bibliotecas Importadas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-funcoes-definidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Funções Definidas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Funções Definidas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurar_engineschema" class="md-nav__link">
+    <span class="md-ellipsis">
+      configurar_engine(schema)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carregar_dadosquery-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      carregar_dados(query, engine)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gerar_hashrow-colunasnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      gerar_hash(row, colunas=None)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inserir_dados_com_tratamentodf-nome_tabela-engine_destino" class="md-nav__link">
+    <span class="md-ellipsis">
+      inserir_dados_com_tratamento(df, nome_tabela, engine_destino)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drop_viewsengine_destino" class="md-nav__link">
+    <span class="md-ellipsis">
+      drop_views(engine_destino)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recreate_viewsengine_destino" class="md-nav__link">
+    <span class="md-ellipsis">
+      recreate_views(engine_destino)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execucao_no_periodo_permitido" class="md-nav__link">
+    <span class="md-ellipsis">
+      execucao_no_periodo_permitido()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcoes-de-manipulacao-de-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funções de Manipulação de Data:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pasta_localsubpasta" class="md-nav__link">
+    <span class="md-ellipsis">
+      pasta_local(subpasta)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-funcoes-de-processamento-de-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Funções de Processamento de Arquivos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Funções de Processamento de Arquivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#processar_arquivocaminho_destino-aba" class="md-nav__link">
+    <span class="md-ellipsis">
+      processar_arquivo(caminho_destino, aba)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#determinar_modalentidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      determinar_modal(entidade)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#determinar_produtonome" class="md-nav__link">
+    <span class="md-ellipsis">
+      determinar_produto(nome)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-variaveis-de-configuracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Variáveis de Configuração
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-carregamento-de-variaveis-de-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Carregamento de Variáveis de Ambiente
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="funcoes">Funções</h1>
+<p>As funções presentes neste script são responsáveis por executar operações de integração e processamento de dados, abrangendo tarefas como manipulação de arquivos e interação com bancos de dados. Elas são amplamente utilizadas em diversas partes do projeto e foram desenvolvidas com o objetivo de eliminar redundâncias no código, promovendo maior reutilização e organização.</p>
+<h2 id="estrutura-do-script">Estrutura do Script</h2>
+<h3 id="1-bibliotecas-importadas">1. <strong>Bibliotecas Importadas</strong></h3>
+<p>O script faz uso de várias bibliotecas para gerenciar as operações de banco de dados e manipulação de dados:</p>
+<ul>
+<li><code>os</code>: Para operações de sistema de arquivos.</li>
+<li><code>hashlib</code>: Para gerar hashes SHA-256.</li>
+<li><code>datetime</code>: Para trabalhar com datas e horários.</li>
+<li><code>pandas</code>: Para manipulação de dados e leitura de arquivos.</li>
+<li><code>sqlalchemy</code>: Para interagir com bancos de dados SQL.</li>
+<li><code>snowflake.sqlalchemy</code>: Para conectar ao Snowflake.</li>
+<li><code>dotenv</code>: Para carregar variáveis de ambiente a partir de um arquivo <code>.env</code>.</li>
+</ul>
+<h3 id="2-funcoes-definidas">2. <strong>Funções Definidas</strong></h3>
+<h4 id="configurar_engineschema"><code>configurar_engine(schema)</code></h4>
+<p>Configura a conexão com o banco de dados Snowflake, utilizando credenciais e informações armazenadas em variáveis de ambiente. A função retorna um objeto <code>engine</code> para interação com o banco de dados.</p>
+<h4 id="carregar_dadosquery-engine"><code>carregar_dados(query, engine)</code></h4>
+<p>Executa uma consulta SQL e retorna os resultados em um <code>DataFrame</code> do pandas.</p>
+<h4 id="gerar_hashrow-colunasnone"><code>gerar_hash(row, colunas=None)</code></h4>
+<p>Gera um hash SHA-256 com base nas colunas especificadas de uma linha de dados ou de toda a linha se nenhuma coluna for especificada.</p>
+<h4 id="inserir_dados_com_tratamentodf-nome_tabela-engine_destino"><code>inserir_dados_com_tratamento(df, nome_tabela, engine_destino)</code></h4>
+<p>Insere dados de um <code>DataFrame</code> em uma tabela de banco de dados PostgreSQL com tratamento de duplicados. A função utiliza a cláusula <code>ON CONFLICT</code> para evitar duplicação de dados com base no campo <code>hash</code>.</p>
+<h4 id="drop_viewsengine_destino"><code>drop_views(engine_destino)</code></h4>
+<p>Exclui views específicas no banco de dados de destino (PostgreSQL), removendo dependências associadas com a cláusula <code>CASCADE</code>.</p>
+<h4 id="recreate_viewsengine_destino"><code>recreate_views(engine_destino)</code></h4>
+<p>Recria as views específicas no banco de dados de destino (PostgreSQL) executando as queries necessárias para cada view.</p>
+<h4 id="execucao_no_periodo_permitido"><code>execucao_no_periodo_permitido()</code></h4>
+<p>Verifica se o dia atual está dentro de uma janela de execução permitida, definida entre os dias 15 e o último dia do mês.</p>
+<h4 id="funcoes-de-manipulacao-de-data">Funções de Manipulação de Data:</h4>
+<ul>
+<li><strong><code>carregar_ultima_data(data_file)</code></strong>: Carrega a última data salva de um arquivo.</li>
+<li><strong><code>salvar_ultima_data(data_file, data)</code></strong>: Salva a data atual em um arquivo.</li>
+</ul>
+<h4 id="pasta_localsubpasta"><code>pasta_local(subpasta)</code></h4>
+<p>Retorna o caminho do diretório local onde os arquivos devem ser salvos, criando a pasta, se necessário.</p>
+<h3 id="3-funcoes-de-processamento-de-arquivos">3. <strong>Funções de Processamento de Arquivos</strong></h3>
+<h4 id="processar_arquivocaminho_destino-aba"><code>processar_arquivo(caminho_destino, aba)</code></h4>
+<p>Lê uma aba específica de um arquivo Excel e reescreve a aba no mesmo arquivo, mantendo o formato original. Utiliza a biblioteca <code>pandas</code> e <code>openpyxl</code> para manipulação de arquivos Excel.</p>
+<h4 id="determinar_modalentidade"><code>determinar_modal(entidade)</code></h4>
+<p>Classifica uma entidade em categorias como "B2B", "M. PÚBLICO", "VAREJO" ou "Indefinido", dependendo do nome da entidade.</p>
+<h4 id="determinar_produtonome"><code>determinar_produto(nome)</code></h4>
+<p>Classifica o tipo de produto com base no nome fornecido. As categorias podem incluir "ISOLADO 10 ML", "ISOLADO 30 ML", "EXTRATO 36,76", ou "Indefinido".</p>
+<h3 id="4-variaveis-de-configuracao">4. <strong>Variáveis de Configuração</strong></h3>
+<ul>
+<li><strong><code>DATABASE_URL_DESTINO</code></strong>: A URL de conexão com o banco de dados PostgreSQL de destino.</li>
+<li><strong><code>engine_destino</code></strong>: O objeto <code>engine</code> configurado para conexão com o PostgreSQL.</li>
+</ul>
+<h3 id="5-carregamento-de-variaveis-de-ambiente">5. <strong>Carregamento de Variáveis de Ambiente</strong></h3>
+<p>O script utiliza o arquivo <code>.env</code> para carregar variáveis sensíveis como credenciais de banco de dados e outras configurações importantes:</p>
+<pre><code class="language-bash">ACCOUNT=example_account
+USER=example_user
+PASSWORD_SNOW=example_password
+DATABASE=example_database
+SCHEMA=example_schema
+WAREHOUSE=example_warehouse
+ROLE=example_role
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>

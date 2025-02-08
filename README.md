@@ -69,7 +69,7 @@ Aguarde alguns minutos para que o GitHub Pages processe as alterações.
 mkdocs gh-deploy --clean
 ```
 **O erro "Permission denied (publickey)" aparece ao tentar fazer o deploy?**
-Verifique se sua chave SSH está configurada corretamente no GitHub:
+- Verifique se sua chave SSH está configurada corretamente no GitHub:
 
 ```bash
 ssh -T git@github.com

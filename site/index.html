@@ -409,6 +409,57 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="4. Processo de Carregamento de Dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#carregamento-inicial-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carregamento Inicial de Dados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atualizacoes-incrementais-diarias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atualizações Incrementais Diárias
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tratamento-de-duplicidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tratamento de Duplicidade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atualizacao-de-arquivos-do-sharepoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atualização de Arquivos do SharePoint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mais-detalhes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mais Detalhes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1002,6 +1053,57 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="4. Processo de Carregamento de Dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#carregamento-inicial-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carregamento Inicial de Dados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atualizacoes-incrementais-diarias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atualizações Incrementais Diárias
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tratamento-de-duplicidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tratamento de Duplicidade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atualizacao-de-arquivos-do-sharepoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atualização de Arquivos do SharePoint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mais-detalhes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mais Detalhes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1163,21 +1265,53 @@ RAILWAY_DB_NAME=dbname
 </code></pre>
 <h4 id="8-verifique-no-banco-se-as-tabelas-foram-atualizadas-corretamente">8. Verifique no banco se as tabelas foram atualizadas corretamente.</h4>
 <h2 id="4-processo-de-carregamento-de-dados">4. Processo de Carregamento de Dados</h2>
+<h3 id="carregamento-inicial-de-dados"><strong>Carregamento Inicial de Dados</strong></h3>
 <ul>
-<li><strong>Carregamento Inicial de Dados</strong>:</li>
-<li>Descreva os passos para extrair os dados iniciais (primeiro carregamento) da fonte de dados.</li>
-<li>Forneça comandos ou scripts de exemplo usados para o carregamento inicial.</li>
-<li>Explique as transformações ou limpezas de dados rmkdocealizadas durante esse processo.</li>
+<li><a href="carregamento_dados/">Consulte esta documentação</a> para detalhes sobre o carregamento inicial de dados.</li>
+</ul>
+<h3 id="atualizacoes-incrementais-diarias"><strong>Atualizações Incrementais Diárias</strong></h3>
+<ul>
 <li>
-<p>Inclua erros comuns e soluções para o carregamento inicial.</p>
+<p><strong>Extração de Dados:</strong><br />
+  Os dados são extraídos da tabela Fato e dimensões das schema CDDD e TD. Também extraímos dados do Sharepoint para vendas extras, acesso e PBM </p>
 </li>
 <li>
-<p><strong>Atualizações Incrementais Diárias</strong>:</p>
+<p><strong>Transformação dos Dados:</strong><br />
+  Após a extração (CDDD), os dados são carregados em um dataframe pandas para realizar as seguintes transformações:</p>
 </li>
-<li>Descreva o processo para as atualizações diárias, incluindo como os novos dados são extraídos, transformados e carregados no banco de dados.</li>
-<li>Explique como o sistema detecta novos ou dados alterados (por exemplo, usando carimbos de data/hora, chaves incrementais).</li>
-<li>Inclua a programação para as atualizações e como modificá-la.</li>
-<li>Destaque como tratar erros ou problemas nas atualizações incrementais (por exemplo, tentativas, logs).</li>
+<li>Renomeação de colunas</li>
+<li>Formatação dos tipos de dados</li>
+<li>Criação de novas colunas:<ul>
+<li><strong>Coluna <code>hash</code>:</strong> Criação de uma constraint para evitar a inserção de dados duplicados.</li>
+<li><strong>Coluna <code>created_at</code>:</strong> Registro de um timestamp com a data e hora em que o dado foi inserido no banco de dados.</li>
+</ul>
+</li>
+</ul>
+<h3 id="tratamento-de-duplicidade"><strong>Tratamento de Duplicidade</strong></h3>
+<ul>
+<li>
+<p>Quando dados são inseridos na plataforma, é realizada uma verificação para garantir que não haja registros duplicados. A verificação é feita com base no <strong>hash</strong>, um campo único que identifica cada registro de maneira exclusiva.</p>
+</li>
+<li>
+<p>Se um registro com o mesmo hash já existir:</p>
+<ul>
+<li>Em vez de criar uma nova entrada, o sistema <strong>atualiza</strong> o registro existente com os novos valores, garantindo que o banco de dados sempre mantenha a versão mais atualizada dos dados.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Resumo:</strong><br />
+  Se o hash do dado já existir na tabela, o aplicativo <strong>não cria uma nova entrada</strong>; ele <strong>atualiza</strong> os valores dos campos correspondentes, evitando duplicações e mantendo o banco de dados organizado e sempre atualizado.</p>
+<ul>
+<li><strong>Observação:</strong><br />
+  Embora a lógica de duplicidade tenha sido implementada para evitar registros repetidos, ainda é possível que algumas duplicatas ocorram devido a fatores imprevistos. Até o momento, as duplicatas têm sido a principal causa de manutenção no banco de dados, especialmente devido à falta de padrão nos registros da Closeup (fonte original).</li>
+</ul>
+<h3 id="atualizacao-de-arquivos-do-sharepoint"><strong>Atualização de Arquivos do SharePoint</strong></h3>
+<ul>
+<li>Os arquivos baixados do SharePoint são atualizados diariamente. Porém, como o volume de dados é baixo, não é aplicada nenhuma lógica de duplicidade nesses arquivos. Em vez disso, as tabelas são simplesmente substituídas pelas versões mais recentes.</li>
+</ul>
+<h3 id="mais-detalhes"><strong>Mais Detalhes</strong></h3>
+<ul>
+<li>Para informações adicionais sobre os aspectos técnicos das atualizações diárias, consulte a seção <strong>Pipeline</strong> nesta documentação, começando <a href="update_fato_cdd/">por aqui</a>.</li>
 </ul>
 <h2 id="5-execucao-do-codigo">5. Execução do Código</h2>
 <ul>

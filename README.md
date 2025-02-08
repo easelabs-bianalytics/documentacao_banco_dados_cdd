@@ -49,3 +49,22 @@ poetry run mkdocs gh-deploy
   - Cria a branch gh-pages (caso não exista).
   - Copia os arquivos estáticos da documentação para essa branch.
   - Faz um commit e envia os arquivos para o repositório remoto na branch gh-pages.
+
+## 5. Verificar a Documentação no GitHub Pages
+Após o deploy, a documentação estará disponível na URL:
+
+```bash
+https://easelabs-bianalytics.github.io/documentacao_banco_dados_cdd/
+```
+Aguarde alguns minutos para que o GitHub Pages processe as alterações.
+
+## 6. Resolvendo Problemas Comuns
+
+**Alterações não aparecem no GitHub Pages?**
+- Verifique se a branch gh-pages está sendo atualizada corretamente.
+- Confirme que a opção GitHub Pages está habilitada no repositório (Settings > Pages).
+- Force uma atualização com:
+
+  ```bash
+mkdocs gh-deploy --clean
+```

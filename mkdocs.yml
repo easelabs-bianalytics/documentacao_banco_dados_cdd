@@ -6,6 +6,7 @@ nav:
   - Guia do Usuário: 
       - Introdução ao projeto: index.md
       - Configuração GitHub: configuracao_github.md
+      - Backup Banco de Dados: backup_banco.md
   - Projeto Banco de Dados CDD: 
       - Dados: dados.md
       - Módulos:

@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../configuracao_github/">
+      
+      
+        <link rel="next" href="../dados/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>Projeto banco dados - Banco de Dados CDD-TD</title>
+        <title>Backup Banco de Dados - Banco de Dados CDD-TD</title>
       
     
     
@@ -59,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#passo-a-passo-para-criar-backup-do-postgresql" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -91,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Projeto banco dados
+              Backup Banco de Dados
             
           </span>
         </div>
@@ -205,17 +214,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
@@ -230,7 +241,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             Guia do Usuário
@@ -285,10 +296,31 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../backup_banco/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Backup Banco de Dados
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -298,6 +330,134 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#passo-1-instalar-o-pg_dump" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 1: Instalar o pg_dump
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Passo 1: Instalar o pg_dump">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passo-2-criar-backup-manualmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 2: Criar Backup Manualmente
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Passo 2: Criar Backup Manualmente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-prompt-de-comando-ou-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows (Prompt de Comando ou PowerShell):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-ou-wsl-rodando-no-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux (ou WSL rodando no Windows):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passo-3-criar-uma-rotina-de-backup-automatico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 3: Criar uma Rotina de Backup Automático
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Passo 3: Criar uma Rotina de Backup Automático">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-agendador-de-tarefas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows (Agendador de Tarefas):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-crontab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux (Crontab):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passo-4-restaurar-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 4: Restaurar Backup
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -700,6 +860,124 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#passo-1-instalar-o-pg_dump" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 1: Instalar o pg_dump
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Passo 1: Instalar o pg_dump">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passo-2-criar-backup-manualmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 2: Criar Backup Manualmente
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Passo 2: Criar Backup Manualmente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-prompt-de-comando-ou-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows (Prompt de Comando ou PowerShell):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-ou-wsl-rodando-no-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux (ou WSL rodando no Windows):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passo-3-criar-uma-rotina-de-backup-automatico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 3: Criar uma Rotina de Backup Automático
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Passo 3: Criar uma Rotina de Backup Automático">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-agendador-de-tarefas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows (Agendador de Tarefas):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-crontab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux (Crontab):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passo-4-restaurar-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 4: Restaurar Backup
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -718,9 +996,95 @@
   
 
 
-  <h1>Projeto banco dados</h1>
-
-
+<h1 id="passo-a-passo-para-criar-backup-do-postgresql">Passo a Passo para Criar Backup do PostgreSQL</h1>
+<h2 id="passo-1-instalar-o-pg_dump">Passo 1: Instalar o pg_dump</h2>
+<p>O <code>pg_dump</code> vem com a instalação do PostgreSQL. Se você ainda não o instalou:</p>
+<h3 id="windows">Windows:</h3>
+<p>Baixe e instale o PostgreSQL no <a href="https://www.postgresql.org/download/">site oficial</a>.</p>
+<h3 id="linux">Linux:</h3>
+<p>Instale com:</p>
+<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt install postgresql-client -y
+</code></pre>
+<hr />
+<h2 id="passo-2-criar-backup-manualmente">Passo 2: Criar Backup Manualmente</h2>
+<h3 id="windows-prompt-de-comando-ou-powershell">Windows (Prompt de Comando ou PowerShell):</h3>
+<p>Abra o terminal e rode:</p>
+<pre><code class="language-bash">pg_dump -U usuario -h localhost -p 5432 -d meu_banco -F c -b -v -f &quot;C:\Backups\backup.dump&quot;
+</code></pre>
+<p>Caso o comando <code>pg_dump</code> não seja reconhecido, pode ser porque o PostgreSQL não está instalado ou o caminho do executável (bin do PostgreSQL) não está no Path do sistema. Para adicionar PostgreSQL ao Path do Sistema:</p>
+<p>Abra o Painel de Controle e vá até:</p>
+<ul>
+<li>
+<p>Sistema <strong>&gt;</strong> Configurações Avançadas do Sistema <strong>&gt;</strong> Variáveis de Ambiente</p>
+</li>
+<li>
+<p>Em Variáveis do Sistema, encontre Path e clique em Editar.</p>
+</li>
+<li>
+<p>Adicione o caminho da pasta bin do PostgreSQL. Exemplo:</p>
+</li>
+</ul>
+<pre><code class="language-bash">C:\Program Files\PostgreSQL\&lt;versao&gt;\bin
+</code></pre>
+<p>Salve e reinicie o PowerShell. Agora, o comando pg_dump deve funcionar.</p>
+<p>Após seguir os passos acima, rode:</p>
+<pre><code class="language-bash">pg_dump --version
+</code></pre>
+<p>Se aparecer a versão do pg_dump, significa que está funcionando. </p>
+<h3 id="linux-ou-wsl-rodando-no-windows">Linux (ou WSL rodando no Windows):</h3>
+<p>Se estiver no WSL e quiser salvar no Windows:</p>
+<pre><code class="language-bash">pg_dump -U usuario -h localhost -p 5432 -d meu_banco -F c -b -v -f /mnt/c/Backups/backup.dump
+</code></pre>
+<p>🔹 Explicação:</p>
+<ul>
+<li>-U usuario → Nome do usuário do PostgreSQL.</li>
+<li>-h localhost → Host do banco.</li>
+<li>-p 5432 → Porta padrão.</li>
+<li>-d meu_banco → Nome do banco.</li>
+<li>-F c → Formato compactado (.dump).</li>
+<li>-b → Inclui blobs.</li>
+<li>-v → Modo verboso.</li>
+<li>-f caminho_do_arquivo → Onde salvar o backup.</li>
+</ul>
+<hr />
+<h2 id="passo-3-criar-uma-rotina-de-backup-automatico">Passo 3: Criar uma Rotina de Backup Automático</h2>
+<h3 id="windows-agendador-de-tarefas">Windows (Agendador de Tarefas):</h3>
+<ul>
+<li>Abrir o Agendador de Tarefas (<code>taskschd.msc</code>).</li>
+<li>Criar uma Nova Tarefa.</li>
+<li>Em Ações, selecione Executar um Programa e insira:
+    Programa: <code>C:\Program Files\PostgreSQL\&lt;versao&gt;\bin\pg_dump.exe</code>
+    Argumentos:</li>
+</ul>
+<pre><code class="language-bash">-U usuario -h localhost -p 5432 -d meu_banco -F c -b -v -f C:\Backups\backup_%date:~-4,4%%date:~-7,2%%date:~-10,2%.dump
+</code></pre>
+<ul>
+<li>Isso cria backups com a data no nome, ex: backup_20250211.dump.</li>
+</ul>
+<hr />
+<h3 id="linux-crontab">Linux (Crontab):</h3>
+<p>Abra o terminal e edite o crontab:</p>
+<pre><code class="language-bash">crontab -e
+</code></pre>
+<p>Adicione esta linha para rodar o backup de seg-sex às 10h da manhã:</p>
+<pre><code class="language-bash">0 10 * * 1-5 pg_dump -U usuario -h localhost -p 5432 -d meu_banco -F c -b -v -f /mnt/c/Users/User/OneDrive\ -\ EASE\ LABS\ GROUP/1\ -\ Operação\ -\ 327/15\ -\ Backups/backup_$(date +\%Y\%m\%d).dump
+</code></pre>
+<p>🔹 Salva o backup no Windows com a data no nome.</p>
+<p>Abaixo como configurar outro horário de sua preferência no crontab</p>
+<pre><code class="language-lua">* * * * *
+| | | | |
+| | | | +-- Dia da semana (0 - 6) (Domingo = 0)
+| | | +---- Mês (1 - 12)
+| | +------ Dia do mês (1 - 31)
+| +-------- Hora (0 - 23)
++---------- Minuto (0 - 59)
+</code></pre>
+<h2 id="passo-4-restaurar-backup">Passo 4: Restaurar Backup</h2>
+<p>Para restaurar os dados em caso de perda, use:</p>
+<p>Substitua o caminho com o caminho no qual você fez o backup</p>
+<pre><code class="language-bash">pg_restore -U usuario -h localhost -p 5432 -d meu_banco -v &quot;/mnt/c/Backups/backup_20250211.dump&quot;
+</code></pre>
+<p>Agora, o banco terá backups automáticos e estará seguro! 🚀</p>
 
 
 
